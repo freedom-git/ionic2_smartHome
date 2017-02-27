@@ -1,0 +1,18 @@
+<ion-content id="airConditionRemoteCtrl" has-bouncing="false" scrollbar-y="false" scrollbar-x="false" direction="y">
+  <div class="remoteContentScreen">
+    <p class="temperatureText">{{dataService.deviceStatus.airConditioner.settingTem}}</p>
+    <p class="logo">FREEDOM</p>
+    <ion-icon name="ios-power" class="power-switch" isActive="true" (click)="power_switch_click()" [ngClass]="{true:'on',false:''}[dataService.airCtrl.temperature.airConditioningStatus=='on']"></ion-icon>
+    <ion-icon name="ios-arrow-up" class="addTemperature" (click)="addTemperature()"></ion-icon>
+    <ion-icon name="ios-arrow-down" class="reduceTemperature" (click)="reduceTemperature()"></ion-icon>
+    <ion-icon name="ios-snow" class="coldMode" isActive="true" (click)="coldMode()" [ngClass]="{true:'on',false:''}[dataService.deviceStatus.airConditioner.mode=='coldMode']"></ion-icon>
+    <ion-icon name="ios-flag" class="windMode" (click)="windMode()" [ngClass]="{true:'on',false:''}[dataService.deviceStatus.airConditioner.mode=='windMode']"></ion-icon>
+    <ion-icon name="ios-water" class="reduceHumidityMode" (click)="reduceHumidityMode()" [ngClass]="{true:'on',false:''}[dataService.deviceStatus.airConditioner.mode=='reduceHumidityMode']"></ion-icon>
+    <ion-icon name="ios-bonfire" class="heatMode" (click)="heatMode()" [ngClass]="{true:'on',false:''}[dataService.deviceStatus.airConditioner.mode=='heatMode']"></ion-icon>
+    <ion-icon name="ios-arrow-round-down" class="windDirection" (click)="windDirection()"></ion-icon>
+    <ion-icon name="ios-infinite" class="windDirectionAuto" (click)="windDirectionAuto()" [ngClass]="{true:'on',false:''}[dataService.deviceStatus.airConditioner.windAutoDirection]"></ion-icon>
+    <ion-icon name="ios-star-outline" class="wind1" (click)="wind1()" [ngClass]="{true:'on',false:''}[dataService.deviceStatus.airConditioner.windGrade==1]"></ion-icon>
+    <ion-icon name="ios-star-half" class="wind2" (click)="wind2()" [ngClass]="{true:'on',false:''}[dataService.deviceStatus.airConditioner.windGrade==2]"></ion-icon>
+    <ion-icon name="ios-star" class="wind3" (click)="wind3()" [ngClass]="{true:'on',false:''}[dataService.deviceStatus.airConditioner.windGrade==3]"></ion-icon>
+  </div>
+</ion-content>

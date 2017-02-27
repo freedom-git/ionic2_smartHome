@@ -1,0 +1,48 @@
+page-music-menus-modals {
+.musicCtrlModel.hafOpacity {
+    background-color: rgba(22, 24, 28,.8);
+}
+ion-header.musicCtrlModel ion-toolbar  .toolbar-background {
+    background-color: rgba(18, 44, 84,1);
+    // border-color:#fff;
+}
+ion-header.musicCtrlModel .searchbar-input-container {
+    background-color: rgba(32, 34, 38,.3);
+}
+ion-header.musicCtrlModel .searchbar-input-container .searchbar-input {
+    color: #889bb9;
+    background-color: rgba(32, 34, 38,.3);
+}
+ion-header .toolbar {
+    padding: 0;
+    border-bottom: 1px #FFF solid;
+}
+
+ion-footer  .toolbar-background {
+    background-color: #444444;
+}
+
+ion-footer   .toolbar-title{
+    text-align: center;
+    color: #889bb9;
+}
+.musicCtrlModel .opacity {
+    background-color: rgba(0,0,0,0);
+}
+.musicCtrlModel ul {
+    margin: 0;
+    padding: 0;
+}
+.musicCtrlModel ul li{
+    color: #889bb9;
+    font-weight: bold;
+    font-family: "Times New Roman", Georgia, serif;
+    line-height: 13vw
+}
+.musicCtrlModel ul li:nth-child(2n){
+    background-color: rgba(26, 28, 32,.3);
+}
+.musicCtrlModel .item {
+    border: none;
+}
+}

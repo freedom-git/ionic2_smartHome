@@ -1,0 +1,46 @@
+<!--<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>-->
+
+
+
+<ion-content id="musicCtrl" ng-cloak has-bouncing="true" scrollbar-y="false" scrollbar-x="false" direction="y">
+  <div class="welcome">
+    <p>THE FREEDOM</p>
+    <p>Home Automation Of Freedom</p>
+  </div>
+  <p class="musicTitle">{{dataService.music.musicFileList[dataService.music.musicStatus.musicIndex]?(dataService.music.musicFileList[dataService.music.musicStatus.musicIndex]
+    | splitMusicName).name:'Enjoy Your Music'}}</p>
+  <div class="ctrl">
+    <div class="left" (click)="lastAndNext('last')">
+      <ion-icon name="ios-arrow-back" isActive="false"></ion-icon>
+    </div>
+    <div class="middle">
+      <div class="outCircle" (click)="controlButtonClicked()">
+        <ion-icon *ngIf="dataService.music.musicStatus.status!='playing'" name="ios-play" isActive="true"></ion-icon>
+        <ion-icon *ngIf="dataService.music.musicStatus.status=='playing'" name="ios-pause" isActive="true"></ion-icon>
+      </div>
+    </div>
+    <div class="right" (click)="lastAndNext('next')">
+      <ion-icon name="ios-arrow-forward" isActive="false"></ion-icon>
+    </div>
+  </div>
+  <p class="musicSubTitle">{{dataService.music.musicFileList[dataService.music.musicStatus.musicIndex]?(dataService.music.musicFileList[dataService.music.musicStatus.musicIndex]
+    | splitMusicName).author:'Have A Nice Day'}}</p>
+  <div class="parent">
+    <div class="child" (click)="presentModal()">
+      <ion-icon name="ios-menu" isActive="true"></ion-icon>
+    </div>
+    <div class="child">
+      <ion-icon name="ios-shuffle" isActive="true"></ion-icon>
+    </div>
+    <div class="child">
+      <ion-icon name="ios-infinite" isActive="true"></ion-icon>
+    </div>
+    <div class="child" (click)="stop()">
+      <ion-icon name="ios-power" isActive="true"></ion-icon>
+    </div>
+  </div>
+</ion-content>

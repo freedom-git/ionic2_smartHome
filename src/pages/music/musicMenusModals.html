@@ -1,0 +1,22 @@
+<ion-header class=" hafOpacity musicCtrlModel">
+    <ion-toolbar color="dark">
+        <ion-searchbar [(ngModel)]="searchText"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+
+
+
+
+<ion-content class=" opacity  hafOpacity musicCtrlModel">
+    <ul class="list">
+        <li class="item opacity" *ngFor="let music of dataService.music.musicFileList | filter:searchText"
+            (click)="changeMusic(music);dismiss()">{{(music | splitMusicName).name}}</li>
+    </ul>
+</ion-content>
+
+<ion-footer (click)="dismiss()">
+    <ion-toolbar>
+        <ion-title>Cancel</ion-title>
+    </ion-toolbar>
+</ion-footer>

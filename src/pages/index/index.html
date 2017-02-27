@@ -1,0 +1,61 @@
+<ion-content id="index" has-bouncing="true" scrollbar-y="false" scrollbar-x="false" direction="y">
+    <div class="city">
+        <div class="title" *ngIf="dataService.weather.basic.cnty">
+            <h2>{{dataService.weather.basic.cnty+'・'+dataService.weather.basic.city}}</h2>
+            <h3>{{'空气质量：'+dataService.weather.aqi.city.aqi+'・'+dataService.weather.aqi.city.qlty}}</h3>
+        </div>
+        <div class="date-time">
+            <div class="dmy">
+                <div id="txt" *ngIf="dataService.weather.now.pres">室外实时</div>
+                <div id="txt" *ngIf="!dataService.weather.now.pres">获取天气信息失败</div>
+                <div class="date" *ngIf="dataService.weather.now.pres">
+                    {{dataService.weather.now.tmp+'℃・'+dataService.weather.now.hum+'%・'+dataService.weather.now.pres+'pa・'+dataService.weather.now.cond.txt+'・体感'+dataService.weather.now.fl+'℃'}}
+                </div>
+            </div>
+            <div class="temperature">
+                <p>{{dataService.airCtrl.temperature.value}}<span>℃</span> {{dataService.airCtrl.humidity.value}}<span>%</span></p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="button-group-navigation">
+        <ul>
+            <li>
+                <a (hold)="navHold('music')" class="btn" [ngStyle]="{'width.px':(innerWidth-6)/6}">
+                    <ion-icon name="musical-notes" isActive="true"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a class="btn" [ngStyle]="{'width.px':(innerWidth-6)/6}">
+                    <ion-icon name="snow" isActive="false"></ion-icon>
+                </a>
+            </li>
+
+            <li>
+                <a class="btn" [ngStyle]="{'width.px':(innerWidth-6)/6}">
+                    <ion-icon name="pin" isActive="false"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a class="btn" [ngStyle]="{'width.px':(innerWidth-6)/6}">
+                    <ion-icon name="sync" isActive="false"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a class="btn" [ngStyle]="{'width.px':(innerWidth-6)/6}">
+                    <ion-icon name="plane" isActive="false"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a class="btn" [ngStyle]="{'width.px':(innerWidth-6)/6}">
+                    <ion-icon name="volume-off" isActive="false"></ion-icon>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="itemContent">
+        <div *ngFor="let item of items" class="itemButton" [ngStyle]="{'background-image':'url(assets/images/'+item.img+')'}"  (click)="itemClick(item.action)"><div class="blackShadow"><p>{{item.text}}</p></div></div>
+    </div>
+    <!--<h3 ng-if="temperature">{{temperature}}</h3> 
+    <h3 ng-if="humidity">{{humidity}}</h3>-->
+</ion-content>

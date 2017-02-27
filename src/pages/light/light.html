@@ -1,0 +1,16 @@
+<ion-content
+    id="light"
+
+            has-bouncing="true"
+            scrollbar-y="false"
+            scrollbar-x="false"
+            direction="y">
+        <div class="itemContent">
+            <div *ngFor="let item of items" class="itemButton"  (click)="itemClick(item)">
+                <p>{{item.text}}</p>
+                <img src="assets/images/on.jpg" *ngIf="item.status=='on'">
+                <img src="assets/images/off.jpg" *ngIf="item.status=='off'">
+            </div>
+        </div>
+
+    </ion-content>
